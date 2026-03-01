@@ -29,7 +29,7 @@ pip install ddgsearch
 Or from source:
 
 ```bash
-git clone https://github.com/yourname/ddgsearch
+git clone https://github.com/someonelearn/ddgsearch
 cd ddgsearch
 pip install -e ".[dev]"
 ```

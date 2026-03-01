@@ -22,7 +22,7 @@ classifiers = [
     "Topic :: Internet :: WWW/HTTP :: Indexing/Searching",
 ]
 dependencies = [
-    "duckduckgo-search>=6.0",
+    "ddgs>=0.1",
     "trafilatura>=1.9",
 ]
 

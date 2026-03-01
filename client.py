@@ -100,10 +100,10 @@ class SearchClient:
     def _ddg_search(self, query: str, cfg: dict) -> list[dict]:
         """Return raw DuckDuckGo text results."""
         try:
-            from duckduckgo_search import DDGS
+            from ddgs import DDGS
         except ImportError as exc:
             raise ImportError(
-                "duckduckgo-search is required: pip install duckduckgo-search"
+                "ddgs is required: pip install ddgs"
             ) from exc
 
         with DDGS() as ddgs:
@@ -130,7 +130,7 @@ class SearchClient:
     def _ddg_images(self, query: str, cfg: dict) -> list[dict]:
         """Return raw DuckDuckGo image results."""
         try:
-            from duckduckgo_search import DDGS
+            from ddgs import DDGS
         except ImportError:
             return []
 

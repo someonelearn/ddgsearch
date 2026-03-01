@@ -238,16 +238,16 @@ class TestToolDefinition:
 # ---------------------------------------------------------------------------
 
 class TestImportGuard:
-    def test_missing_duckduckgo_search(self, monkeypatch):
+    def test_missing_ddgs(self, monkeypatch):
         import builtins
         real_import = builtins.__import__
 
         def mock_import(name, *args, **kwargs):
-            if name == "duckduckgo_search":
-                raise ImportError("No module named 'duckduckgo_search'")
+            if name == "ddgs":
+                raise ImportError("No module named 'ddgs'")
             return real_import(name, *args, **kwargs)
 
         monkeypatch.setattr(builtins, "__import__", mock_import)
         client = SearchClient()
-        with pytest.raises(ImportError, match="duckduckgo-search is required"):
+        with pytest.raises(ImportError, match="ddgs is required"):
             client._ddg_search("test", client._merge({}))

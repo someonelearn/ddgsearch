@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "ddgsearch"
+version = "0.1.0"
+description = "A Tavily-style web search tool for LLMs, powered by DuckDuckGo and trafilatura."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+keywords = ["llm", "search", "duckduckgo", "trafilatura", "rag", "tool-use"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP :: Indexing/Searching",
+]
+dependencies = [
+    "duckduckgo-search>=6.0",
+    "trafilatura>=1.9",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7",
+    "pytest-mock",
+    "responses",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourname/ddgsearch"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ddgsearch*"]
